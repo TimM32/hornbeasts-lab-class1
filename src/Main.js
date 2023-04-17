@@ -4,8 +4,8 @@ class Main extends React.Component {
     render () {
         return (
             <main>
-                <HornBeast/>
-                <HornBeast/>
+                <HornedBeast/>
+                <HornedBeast/>
 
             </main>
         );
