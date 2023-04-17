@@ -3,24 +3,16 @@ import React from "react";
 
 
 class Header extends React.Component {
-    render () {
+    render() {
         return (
             <>
-            <header>
-                <h1>Hornbeasts 301 </h1>
-            </header>
+                <header>
+                    <h1>Hornbeasts 301</h1>
+                </header>
             </>
 
-
-
         );
-
-
     }
-
-
-
-
 }
 
 
