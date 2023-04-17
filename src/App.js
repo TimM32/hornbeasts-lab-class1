@@ -1,11 +1,26 @@
 // import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import Header from 
 
 
 
 class App extends React.Component {
 
+  render() {
+    return (
+      <>
+      <Header />
+      
+      
+      </>
+
+
+    );
+
+
+
+  }
 
 
 
@@ -13,7 +28,6 @@ class App extends React.Component {
 
 
 
-  
 }
 
 // function App() {
