@@ -1,22 +1,20 @@
 import React from "react";
 
 class HornedBeast extends React.Component {
-    render() {
-        return(
-            <>
-            <article>
-                <h2>Animal: {this.props.title}</h2>
-                <h3>Horns: {this.props.horns}</h3>
-                <p>Description: {this.props.description}</p>
 
-            </article>
-            
-            
-            </>
-        );
-    }
+  render() {
+    console.log('got props:',this.props);
+    return (
+      <>
+        <article>
+           <h2>Animal: {this.props.title}</h2>
+           <img src={this.props.imageUrl} alt={this.props.title} />
+           <p>Description: {this.props.description}</p>
+        </article>
+      </>
+    );
+  }
 
 }
-
 
 export default HornedBeast;
