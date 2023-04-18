@@ -4,8 +4,8 @@ class Main extends React.Component {
     render () {
         return (
             <main>
-                <HornedBeast/>
-                <HornedBeast/>
+                <HornedBeast animal="Rhino" horns="one" descripition="From Africa"/>
+                <HornedBeast animal="Deer" horns="two" descripition="Wild animal that loves cars"/>
 
             </main>
         );
