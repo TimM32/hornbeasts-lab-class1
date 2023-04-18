@@ -5,7 +5,7 @@ class HornedBeast extends React.Component {
         return(
             <>
             <article>
-                <h2>Animal: {this.props.animal}</h2>
+                <h2>Animal: {this.props.title}</h2>
                 <h3>Horns: {this.props.horns}</h3>
                 <p>Description: {this.props.description}</p>
 
