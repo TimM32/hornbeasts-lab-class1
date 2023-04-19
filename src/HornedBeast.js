@@ -1,6 +1,11 @@
 import React from "react";
+import Button from 'react-bootstrap/Button';
+import './HornedBeast.css';
 
 class HornedBeast extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     console.log('got props:',this.props);
