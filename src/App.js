@@ -40,9 +40,19 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <Header />
-        <Main />
+        <Header beast={this.props.beast} />
+        <Main 
+        addBeast={this.addBeast}
+        data={data}
+        handleOnShow={this.handleOnShow}
+        />
         <Footer />
+
+        <Modal show={this.state.showModal} onHide={this.handleOnHide}>
+          <Modal.Header closeButton>
+            <Modal.Title>{this.state.selectedBeast}</Modal.Title>
+          </Modal.Header>
+        </Modal>
       </>
     );
   }

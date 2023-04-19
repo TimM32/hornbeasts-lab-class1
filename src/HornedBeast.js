@@ -17,6 +17,12 @@ class HornedBeast extends React.Component {
     });
   };
 
+  helpHandleOnshow = () => {
+    this.props.helpHandleOnshow(this.props.pie);
+  };
+
+  
+
   render() {
     // console.log('got props:',this.props);
     return (
