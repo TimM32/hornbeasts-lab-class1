@@ -14,7 +14,7 @@ class App extends React.Component {
       selectedBeast: ''
 
     };
-  } 
+  }
 
 
   addBeast = () => {
@@ -30,9 +30,12 @@ class App extends React.Component {
   };
 
   handleOnShow = (beastName) => {
-    
+    this.setState({
+      showModal: true,
+      selectedBeast: beastName
+    });
 
-  }
+  };
 
   render() {
     return (
