@@ -9,9 +9,31 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      
-    }
+      beasts: "",
+      showModal: false,
+      selectedBeast: ''
+
+    };
+  } 
+
+
+  addBeast = () => {
+    this.setState({
+      beast: this.state.beast,
+    });
+  };
+
+  handleOnHide = () => {
+    this.setState({
+      showModal: false
+    });
+  };
+
+  handleOnShow = (beastName) => {
+    
+
   }
+
   render() {
     return (
       <>
