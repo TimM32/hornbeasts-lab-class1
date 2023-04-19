@@ -31,27 +31,27 @@ class HornedBeast extends React.Component {
 
 
 
-        <Col className="mt-4 ">
-          <Card className="h-100 p-3">
-            <Card.Title onClick={this.helpHandleOnShow}>
-              {this.props.pie}
-            </Card.Title>
-            <Card.Img
-              className="mb-4 "
-              src={this.props.imageURL}
-              alt={this.props.title}
-              title={this.props.title}
-              onClick={this.props.addBeast}
-            />
-            <p>{this.state.favorites} Faves!</p>
-            <p onClick={this.handleFavorites}>Click to Like this Pizza?</p>
-            <div>{this.state.pizzaNeed ? 'I need this Pizza!' : ''}</div>
-            <Button onClick={this.pizzaNeeded} className="buttonMargin">I need Pizza!</Button>
-            <Button variant="success" onClick={this.pizzaGot}>
-              I got some Pizza!
-            </Button>
-          </Card>
-        </Col>
+          <Col className="mt-4 ">
+            <Card className="h-100 p-3">
+              <Card.Title onClick={this.helpHandleOnShow}>
+                {this.props.pie}
+              </Card.Title>
+              <Card.Img
+                className="mb-4 "
+                src={this.props.imageURL}
+                alt={this.props.title}
+                title={this.props.title}
+                onClick={this.props.addBeast}
+              />
+              <p>{this.state.favorites} Faves!</p>
+              <p onClick={this.handleFavorites}>Click to Like this Pizza?</p>
+              <div>{this.state.pizzaNeed ? 'I need this Pizza!' : ''}</div>
+              <Button onClick={this.pizzaNeeded} className="buttonMargin">I need Pizza!</Button>
+              <Button variant="success" onClick={this.pizzaGot}>
+                I got some Pizza!
+              </Button>
+            </Card>
+          </Col>
         </article>
 
 

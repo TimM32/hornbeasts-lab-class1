@@ -1,7 +1,7 @@
 import React from "react";
-import HornedBeast from "./HornedBeast";
-
-import './main.css';
+import HornedBeast from "./HornedBeast.js";
+import { Container, Row } from "react-bootstrap";
+// import './main.css';
 
 
 
@@ -25,11 +25,11 @@ class Main extends React.Component {
         return (
             <main>
                 <Container>
-                <Row lg={4} md={3} sm={2} xs={1}>
+                    <Row lg={4} md={3} sm={2} xs={1}>
+                        {beast}
+                    </Row>
                 </Container>
-                </Row>
-              
-                {HornedBeast}
+
             </main>
         );
     }
