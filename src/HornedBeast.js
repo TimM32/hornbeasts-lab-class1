@@ -5,7 +5,17 @@ import './HornedBeast.css';
 class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      favorites: 0,
+      beastsNeeded: false
+    };
   }
+
+  handleFavorites = () => {
+    this.setState({
+      favorites: this.state.favorites + 1,
+    });
+  };
 
   render() {
     console.log('got props:',this.props);
