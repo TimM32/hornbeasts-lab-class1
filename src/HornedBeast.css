@@ -1,0 +1,38 @@
+article {
+    border: 5px solid rgb(223, 19, 155);
+    padding: 1vw;
+    margin-bottom: 1vw;
+    width: 25%;
+}
+
+article img {
+    width: 100%;
+    height: 250px;
+    padding-top: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    padding: 2px;
+}
+
+article p {
+    font-size: 18px;
+
+}
+
+article p:last-of-type {
+    padding-left: 1rem;
+    cursor: pointer;
+}
+
+article p:last-of-type:hover {
+    color: rgb(10, 255, 255);
+    font-weight: bolder;
+
+}
+
+.article-button {
+    margin: .2rem .1vw;
+
+}
