@@ -18,22 +18,27 @@ class HornedBeast extends React.Component {
   };
 
   helpHandleOnshow = () => {
-    this.props.helpHandleOnshow(this.props.pie);
+    this.props.helpHandleOnshow(this.props.title);
   };
 
-  
+
 
   render() {
     // console.log('got props:',this.props);
     return (
       <>
         <article>
-          <h2>Animal: {this.props.title}</h2>
+
+          
+          
+          <h4 onClick={this.helpHandleOnshow}> 🦄 {this.props.title}</h4>
           <p>Favorites {this.state.favorites}</p>
           <Button onClick={this.handleFavorites}> 💖 </Button>
           <img src={this.props.imageUrl} alt={this.props.title} />
           <p>Description: {this.props.description}</p>
         </article>
+
+        
       </>
     );
   }

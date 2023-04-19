@@ -1,9 +1,11 @@
 import "./App.css";
 import React from "react";
-import Header from "./Header";
-import Main from "./Main";
+import Header from "./Header.js";
+import Main from "./Main.js";
 import Footer from "./Footer";
 import data from './data.json';
+import Modal from 'react-bootstrap/Modal';
+
 
 class App extends React.Component {
   constructor(props) {
