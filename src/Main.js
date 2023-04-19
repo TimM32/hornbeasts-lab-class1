@@ -6,16 +6,25 @@ import './main.css';
 
 
 class Main extends React.Component {
-    render () {
+    render() {
         let beast = [];
-        data.forEach((newBeast, index) => {
-            beast.push(<HornedBeast title={newBeast.title} imageUrl={newBeast.imageUrl} description={newBeast.description} key={index} />)
+        this.props.data.map((newBeast, index) => {
+            return beast.push(
+                <HornedBeast
+                    title={newBeast.title}
+                    imageUrl={newBeast.imageUrl}
+                    description={newBeast.description}
+                    key={index}
+                    addBeast={this.props.addBeast}
+                    handleOnShow={this.props.handleOnShow}
+                />
+            );
         });
 
 
         return (
             <main>
-                
+
                 {/* // <HornedBeast 
                 // title="Rhino Family"
                 //  imageUrl="https://images.unsplash.com/photo-1512636618879-bbe79107e9e3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bd9460ee6d1ddbb6b1ca7be86dfc4590&auto=format&fit=crop&w=1825&q=80" description="From Africa"/>
