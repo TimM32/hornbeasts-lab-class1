@@ -29,16 +29,25 @@ class HornedBeast extends React.Component {
       <>
         <article>
 
-          
-          
+
+
           <h4 onClick={this.helpHandleOnshow}> 🦄 {this.props.title}</h4>
           <p>Favorites {this.state.favorites}</p>
           <Button onClick={this.handleFavorites}> 💖 </Button>
           <img src={this.props.imageUrl} alt={this.props.title} />
           <p>Description: {this.props.description}</p>
+
+
+          <img
+            src={this.props.imageUrl}
+            alt={this.props.title}
+            title={this.props.title}
+            onClick={this.props.addBeast}
+          />
         </article>
 
-        
+
+
       </>
     );
   }
