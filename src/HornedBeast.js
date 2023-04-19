@@ -48,7 +48,7 @@ class HornedBeast extends React.Component {
               <div>{this.state.beastNeeded ? 'I want this Beast!' : ''}</div>
               <Button onClick={this.pizzaNeeded} className="buttonMargin">I need Pizza!</Button>
               <Button variant="success" onClick={this.pizzaGot}>
-                I got some Pizza!
+              
               </Button>
             </Card>
           </Col>
