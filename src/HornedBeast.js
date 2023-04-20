@@ -46,10 +46,7 @@ class HornedBeast extends React.Component {
               <p>{this.state.favorites} Faves!</p>
               <p onClick={this.handleFavorites}>Click to favorite a beast!</p>
               <div>{this.state.beastNeeded ? 'I want this Beast!' : ''}</div>
-              <Button onClick={this.pizzaNeeded} className="buttonMargin">I need Pizza!</Button>
-              <Button variant="success" onClick={this.pizzaGot}>
-              
-              </Button>
+              <Button onClick={this.handleFavorites}> ❤️ </Button>
             </Card>
           </Col>
         </article>
