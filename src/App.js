@@ -12,9 +12,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      beasts: "",
       showModal: false,
-      selectedBeast: ''
+      selectedBeast: {}
 
     };
   }
@@ -48,18 +47,23 @@ class App extends React.Component {
     return (
       <>
         <Header beast={this.props.beast} />
-        <Main 
-        addBeast={this.addBeast}
-        data={data}
-        handleOnShow={this.handleOnShow}
+        <Main
+          addBeast={this.addBeast}
+          data={data}
+          handleOnShow={this.handleOnShow}
         />
-        <Footer />
+        <Footer>Tim Maupin Produtions</Footer>
 
-        <Modal show={this.state.showModal} onHide={this.handleOnHide}>
+        <SelectedBeast
+          selectedBeast={this.state.selectedBeast}
+          show={this.state.showModal}
+          handleOnHide={this.handleOnHide} />
+
+        {/* <Modal show={this.state.showModal} onHide={this.handleOnHide}>
           <Modal.Header closeButton>
             <Modal.Title>{this.state.selectedBeast}</Modal.Title>
           </Modal.Header>
-        </Modal>
+        </Modal> */}
       </>
     );
   }
