@@ -4,7 +4,6 @@ import Header from "./Header.js";
 import Main from "./Main.js";
 import Footer from "./Footer";
 import data from './data.json';
-import Modal from 'react-bootstrap/Modal';
 import SelectedBeast from './SelectedBeast.js';
 
 
