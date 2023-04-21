@@ -5,6 +5,7 @@ import Main from "./Main.js";
 import Footer from "./Footer";
 import data from './data.json';
 import Modal from 'react-bootstrap/Modal';
+import SelectedBeast from './SelectedBeast.js';
 
 
 class App extends React.Component {
@@ -32,9 +33,13 @@ class App extends React.Component {
   };
 
   handleOnShow = (beastName) => {
+
+    let selectedBeast = data.find(element => element.title === beastName);
+
+
     this.setState({
       showModal: true,
-      selectedBeast: beastName
+      selectedBeast: selectedBeast
     });
 
   };
