@@ -4,24 +4,27 @@ import Header from "./Header.js";
 import Main from "./Main.js";
 import Footer from "./Footer";
 import data from './data.json';
-import Modal from 'react-bootstrap/Modal';
+import SelectedBeast from './SelectedBeast.js';
+import Button from "react-bootstrap/Button";
+import { Form } from "react-bootstrap";
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      beasts: "",
       showModal: false,
-      selectedBeast: ''
+      selectedBeast: {},
+      sortedData: data
 
     };
   }
 
 
+
   addBeast = () => {
     this.setState({
-      beast: this.state.beast,
+      beast: this.state.beast + '',
     });
   };
 
@@ -32,33 +35,84 @@ class App extends React.Component {
   };
 
   handleOnShow = (beastName) => {
+
+    let selectedBeast = data.find(element => element.title === beastName);
+
+
     this.setState({
       showModal: true,
-      selectedBeast: beastName
+      selectedBeast: selectedBeast
     });
 
   };
 
+  handleSelected = (event) => {
+
+    let selected = event.target.value;
+    if (selected === '1') {
+      let newData = data.filter(numHorns => numHorns.horns === 1);
+      this.setState({ sortedData: newData });
+    } else if (selected === '2') {
+      let newData = data.filter(numHorns => numHorns.horns === 2);
+      this.setState({ sortedData: newData });
+    } else if (selected === '3') {
+      let newData = data.filter(numHorns => numHorns.horns === 3);
+      this.setState({ sortedData: newData });
+    } else if (selected === '100') {
+      let newData = data.filter(numHorns => numHorns.horns === 100);
+      this.setState({ sortedData: newData });
+    } else {
+      this.setState({ sortedData: data });
+    }
+  };
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+  }
+
+
   render() {
-    return (
-      <>
-        <Header beast={this.props.beast} />
-        <Main 
+    let data = this.state.sortedData.map((hornsNum, index) => {
+      return hornsNum;
+    })
+  
+
+
+  return(
+    <>
+      <Header beast={this.state.beast} />
+
+      <Form>
+        <Form.Group>
+          <label>Number of Horns</label>
+          <Form.Select title="selected" onChange={this.handleSelected}>
+          <option value="All"> All</option>
+          <option value="1"> 1</option>
+          <option value="2"> 2</option>
+          <option value="3"> 3</option>
+          <option value="100"> 100</option>
+          </Form.Select>
+        </Form.Group>
+        <Button type="submit">Submit</Button>
+      </Form>
+
+
+      <Main
         addBeast={this.addBeast}
         data={data}
         handleOnShow={this.handleOnShow}
-        />
-        <Footer />
+      />
+      <Footer>Tim Maupin Produtions</Footer>
 
-        <Modal show={this.state.showModal} onHide={this.handleOnHide}>
-          <Modal.Header closeButton>
-            <Modal.Title>{this.state.selectedBeast}</Modal.Title>
-          </Modal.Header>
-        </Modal>
-      </>
-    );
+      <SelectedBeast
+        selectedBeast={this.state.selectedBeast}
+        show={this.state.showModal}
+        handleOnHide={this.handleOnHide} />
+
+
+    </>
+  );
   }
 }
-
 
 export default App;
