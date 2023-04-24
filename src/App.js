@@ -5,6 +5,8 @@ import Main from "./Main.js";
 import Footer from "./Footer";
 import data from './data.json';
 import SelectedBeast from './SelectedBeast.js';
+import Button from "react-bootstrap/Button";
+import { Form } from "react-bootstrap";
 
 
 class App extends React.Component {
@@ -17,6 +19,32 @@ class App extends React.Component {
 
     };
   }
+
+
+
+  addBeast = () => {
+    this.setState({
+      beast: this.state.beast + '',
+    });
+  };
+
+  handleOnHide = () => {
+    this.setState({
+      showModal: false
+    });
+  };
+
+  handleOnShow = (beastName) => {
+
+    let selectedBeast = data.find(element => element.title === beastName);
+
+
+    this.setState({
+      showModal: true,
+      selectedBeast: selectedBeast
+    });
+
+  };
 
   handleSelected = (event) => {
 
@@ -37,36 +65,38 @@ class App extends React.Component {
       this.setState({ sortedData: data });
     }
   };
-}
 
-addBeast = () => {
-  this.setState({
-    beast: this.state.beast + '',
-  });
-};
-
-handleOnHide = () => {
-  this.setState({
-    showModal: false
-  });
-};
-
-handleOnShow = (beastName) => {
-
-  let selectedBeast = data.find(element => element.title === beastName);
+  handleSubmit = (event) => {
+    event.preventDefault();
+  }
 
 
-  this.setState({
-    showModal: true,
-    selectedBeast: selectedBeast
-  });
+  render() {
+    let data = this.state.sortedData.map((hornsNum, index) => {
+      return hornsNum;
+    })
+  
 
-};
 
-render() {
-  return (
+  return(
     <>
-      <Header beast={this.props.beast} />
+      <Header beast={this.state.beast} />
+
+      <Form>
+        <Form.Group>
+          <label>Number of Horns</label>
+          <Form.Select title="selected" onChange={this.handleSelected}>
+          <option value="All"> All</option>
+          <option value="1"> 1</option>
+          <option value="2"> 2</option>
+          <option value="3"> 3</option>
+          <option value="100"> 100</option>
+          </Form.Select>
+        </Form.Group>
+        <Button type="submit">Submit</Button>
+      </Form>
+
+
       <Main
         addBeast={this.addBeast}
         data={data}
@@ -82,8 +112,7 @@ render() {
 
     </>
   );
+  }
 }
-}
-
 
 export default App;
