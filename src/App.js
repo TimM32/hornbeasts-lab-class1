@@ -6,7 +6,7 @@ import Footer from "./Footer.js";
 import data from './data.json';
 import SelectedBeast from './SelectedBeast.js';
 // import Button from "react-bootstrap/Button";
-import  Form  from "react-bootstrap/Form";
+import Form from "react-bootstrap/Form";
 
 
 class App extends React.Component {
@@ -22,11 +22,7 @@ class App extends React.Component {
 
 
 
-  // addBeast = () => {
-  //   this.setState({
-  //     beast: this.state.beast + '',
-  //   });
-  // };
+
 
   handleOnHide = () => {
     this.setState({
@@ -35,7 +31,7 @@ class App extends React.Component {
   };
 
   handleOnShow = (beastName) => {
-
+    console.log("🚀 ~ file: App.js:110 ~ App ~ handleOnShow:", handleOnShow);
     let selectedBeast = data.find(element => element.title === beastName);
 
 
@@ -75,44 +71,42 @@ class App extends React.Component {
     let data = this.state.sortedData.map((hornsNum, index) => {
       return hornsNum;
     })
-  
+
+    return (
+      <>
+        <Header beast={this.state.hornedBeast} />
+
+        <Form>
+          <Form.Group>
+            <label>Number of Horns</label>
+            <Form.Select title="selected" onChange={this.handleSelected}>
+              <option value="All"> All</option>
+              <option value="1"> 1</option>
+              <option value="2"> 2</option>
+              <option value="3"> 3</option>
+              <option value="100"> 100</option>
+            </Form.Select>
+          </Form.Group>
+        </Form>
 
 
-  return(
-    <>
-      <Header beast={this.state.beast} />
+        <Main
+          addBeast={this.addBeast}
+          data={data}
+          handleOnShow={this.handleOnShow}
+        />
+        <Footer>Tim Maupin Produtions</Footer>
 
-      <Form>
-        <Form.Group>
-          <label>Number of Horns</label>
-          <Form.Select title="selected" onChange={this.handleSelected}>
-          <option value="All"> All</option>
-          <option value="1"> 1</option>
-          <option value="2"> 2</option>
-          <option value="3"> 3</option>
-          <option value="100"> 100</option>
-          </Form.Select>
-        </Form.Group>
-        {/* <Button type="submit">Submit</Button> */}
-      </Form>
+        <SelectedBeast
+          selectedBeast={this.state.selectedBeast}
+          show={this.state.showModal}
+          handleOnHide={this.handleOnHide} />
 
 
-      <Main
-        addBeast={this.addBeast}
-        data={data}
-        handleOnShow={this.handleOnShow}
-      />
-      <Footer>Tim Maupin Produtions</Footer>
-
-      <SelectedBeast
-        selectedBeast={this.state.selectedBeast}
-        show={this.state.showModal}
-        handleOnHide={this.handleOnHide} />
-
-
-    </>
-  );
+      </>
+    );
   }
 }
+  
 
 export default App;

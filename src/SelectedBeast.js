@@ -13,8 +13,8 @@ class SelectedBeast extends React.Component {
           </Modal.Header>
 
           <Modal.Body>
-            <img src={this.props.selectedBeast.imageUrl} alt={this.props.title} className='img-fluid'/>
-            </Modal.Body>
+            <img src={this.props.selectedBeast.imageUrl} alt={this.props.title} className='img-fluid' />
+          </Modal.Body>
           <Modal.Footer>{this.props.selectedBeast.description}</Modal.Footer>
         </Modal>
       </>
