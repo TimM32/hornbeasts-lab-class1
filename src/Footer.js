@@ -3,7 +3,9 @@ import React from "react";
 class Footer extends React.Component {
     render () {
         return (
-            <footer>Tim Maupin Productions</footer>
+            <footer>
+                <p>Tim Maupin Productions</p>
+                </footer>
         );
     }
 }
