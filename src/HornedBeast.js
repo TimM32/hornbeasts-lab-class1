@@ -7,7 +7,7 @@ class HornedBeast extends React.Component {
     super(props);
     this.state = {
       favorites: 0,
-      beastsNeeded: false
+
     };
   }
 
@@ -27,26 +27,18 @@ class HornedBeast extends React.Component {
     // console.log('got props:',this.props);
     return (
       <>
+
         <article>
           <Col className="mt-4 ">
-            <Card className="h-100 p-3">
-              <Card.Title onClick={this.helpHandleOnShow}>
-                {this.props.title}
-              </Card.Title>
-              <Card.Img
-                className="mb-4 "
-                src={this.props.imageURL}
-                alt={this.props.title}
-                title={this.props.title}
-                onClick={this.props.addBeast}
-              />
-              <p>{this.state.favorites} Faves!</p>
-              <p onClick={this.handleFavorites}>Click to favorite a beast!</p>
-              <div>{this.state.beastNeeded ? 'I want this Beast!' : ''}</div>
+            <Card className="card">
+              <Card.Title>{this.props.title}</Card.Title>
+              <Card.Img className="mb-4" src={this.props.imageUrl} alt={this.props.title} title={this.props.title} onClick={this.helpHandleOnShow} />
+              <p>Favorited {this.state.favorites + ' '} times</p>
               <Button onClick={this.handleFavorites}> ❤️ </Button>
             </Card>
           </Col>
         </article>
+
 
 
 
