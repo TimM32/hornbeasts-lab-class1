@@ -5,8 +5,8 @@ import Main from "./Main.js";
 import Footer from "./Footer";
 import data from './data.json';
 import SelectedBeast from './SelectedBeast.js';
-import Button from "react-bootstrap/Button";
-import { Form } from "react-bootstrap";
+// import Button from "react-bootstrap/Button";
+import  Form  from "react-bootstrap/Form";
 
 
 class App extends React.Component {
@@ -22,11 +22,11 @@ class App extends React.Component {
 
 
 
-  addBeast = () => {
-    this.setState({
-      beast: this.state.beast + '',
-    });
-  };
+  // addBeast = () => {
+  //   this.setState({
+  //     beast: this.state.beast + '',
+  //   });
+  // };
 
   handleOnHide = () => {
     this.setState({
@@ -93,7 +93,7 @@ class App extends React.Component {
           <option value="100"> 100</option>
           </Form.Select>
         </Form.Group>
-        <Button type="submit">Submit</Button>
+        {/* <Button type="submit">Submit</Button> */}
       </Form>
 
 

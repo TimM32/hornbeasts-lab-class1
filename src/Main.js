@@ -1,7 +1,7 @@
 import React from "react";
 import HornedBeast from "./HornedBeast.js";
 import { Container, Row } from "react-bootstrap";
-// import './main.css';
+import './main.css';
 
 
 
